@@ -1,8 +1,9 @@
 from flask import Flask, request, jsonify
+import os
 import razorpay
 
 app = Flask(__name__)
-client = razorpay.Client(auth=("rzp_test_nFKekgDUCv55L4", "onfHa3ohp93LrIt01HHYYUWc"))
+client = razorpay.Client(auth=(os.getenv('key_id'), os.getenv('key_secret')))
 
 @app.route('/create_order', methods=['POST'])
 def create_order():
