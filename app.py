@@ -13,12 +13,15 @@ def create_order():
   currency = req_data['currency']
   receipt = req_data['receipt']
   notes = req_data['notes']
+  print(amount, currency, receipt, notes)
 
   order_data = {
-    "amount": amount,
-    "currency": currency,
-    "receipt": receipt,
-    "notes": notes
+    "amount": 100*987,
+    "currency": "INR",
+    "receipt": "recipt#01",
+    "notes": {
+      name: "Burhanuddin Fatehi"
+    }
   }
 
   try:
