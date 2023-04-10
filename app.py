@@ -8,7 +8,7 @@ client = razorpay.Client(auth=("rzp_test_nFKekgDUCv55L4", "onfHa3ohp93LrIt01HHYY
 @app.route('/create_order', methods=['POST'])
 def create_order():
   req_data = request.get_json()
-
+  print(req_data)
   amount = req_data['amount']
   currency = req_data['currency']
   receipt = req_data['receipt']
@@ -24,7 +24,7 @@ def create_order():
   try:
     order = client.order.create(order_data)
     return order, 200
-  except razorpay.errors.RazorpayError as e:
+  except Exception as e:
     return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
