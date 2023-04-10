@@ -17,7 +17,7 @@ def create_order():
     "amount": amount,
     "currency": currency,
     "receipt": receipt,
-    "notes": notes
+    "notes": JSON.parse(notes)
   }
 
   try:
