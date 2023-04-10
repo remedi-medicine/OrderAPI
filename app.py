@@ -1,3 +1,4 @@
+import json
 from flask import Flask, request, jsonify
 import os
 import razorpay
@@ -17,7 +18,7 @@ def create_order():
     "amount": amount,
     "currency": currency,
     "receipt": receipt,
-    "notes": JSON.parse(notes)
+    "notes": json.load(notes)
   }
 
   try:
