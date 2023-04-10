@@ -12,13 +12,15 @@ def create_order():
   amount = req_data['amount']
   currency = req_data['currency']
   receipt = req_data['receipt']
-  notes = req_data['notes']
+  # notes = req_data['notes']
 
   order_data = {
     "amount": amount,
     "currency": currency,
     "receipt": receipt,
-    "notes": json.load(notes)
+    "notes": {
+      "address": "Hello World"
+    }
   }
 
   try:
