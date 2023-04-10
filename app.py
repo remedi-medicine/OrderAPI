@@ -23,7 +23,7 @@ def create_order():
 
   try:
     order = client.order.create(order_data)
-    return jsonify({"order_id": order["id"]}), 200
+    return order, 200
   except razorpay.errors.RazorpayError as e:
     return jsonify({"error": str(e)}), 500
 
