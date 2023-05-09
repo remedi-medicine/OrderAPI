@@ -29,5 +29,13 @@ def create_order():
   except Exception as e:
     return jsonify({"error": str(e)}), 500
 
+@app.route('/fetch_payment', methods=['POST'])
+def fetch_payment(paymentId):
+  try:
+    payment = client.payment.fetch(paymentId)
+    return payment, 200
+  except Exception as e:
+    return jsonify({"error": str(e)}), 500
+
 if __name__ == '__main__':
   app.run(debug=True)
